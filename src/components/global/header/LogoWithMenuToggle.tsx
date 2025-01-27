@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import companyLogo from '../../../../public/会社ロゴ.jpg';
+import companyLogo from '../../../../public/新logo.bmp';
 import { Menu } from 'lucide-react';
 import { useSidebar } from '@/components/global/sidebar/context/SidebarContext';
 

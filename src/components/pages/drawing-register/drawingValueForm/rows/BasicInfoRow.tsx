@@ -29,8 +29,6 @@ export function BasicInfoRow({
     }));
   };
 
-  console.log("wrapperClass", wrapperClass)
-  console.log("currentInputClass", currentInputClass)
   return (
     <div className={containerClass}>
       <div className={wrapperClass}>

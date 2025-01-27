@@ -50,7 +50,6 @@ export const DrawingForm: React.FC<DrawingFormProps> = ({ formData, setFormData,
       return 0;
     });
 
-    console.log(pdfFiles);
   // ファイルの種類を判定
   const getFileType = (fileName: string): FileData['type'] => {
     const extension = fileName.split('.').pop()?.toLowerCase();

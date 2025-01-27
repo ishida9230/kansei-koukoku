@@ -12,6 +12,7 @@ interface JWWImportProps {
   onSuccess?: () => void;
 }
 
+//TODO: 現在は使用しない？？
 export function JWWImport({
   formData,
   setFormData,
@@ -40,7 +41,7 @@ export function JWWImport({
       {...getRootProps()}
       className="relative h-full flex flex-col"
     >
-      <div className={`
+      {/* <div className={`
         absolute inset-0 flex flex-col items-center justify-center
         transition-colors duration-200 z-10
         ${isDragActive ? 'bg-blue-50/90' : 'bg-white/90'}
@@ -54,7 +55,7 @@ export function JWWImport({
         <p className="mt-1 text-sm text-gray-500">
           (.jww形式、最大20MB、JW-CAD 8.0以降)
         </p>
-      </div>
+      </div> */}
     </div>
   );
 } 

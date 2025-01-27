@@ -20,6 +20,16 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/drawing-register/page.js"
+    ],
+    "/drawing-search/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/drawing-search/page.js"
+    ],
+    "/drawing-show/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/drawing-show/[id]/page.js"
     ]
   }
 }

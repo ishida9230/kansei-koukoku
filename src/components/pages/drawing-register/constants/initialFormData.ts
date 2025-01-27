@@ -1,8 +1,10 @@
 import { FormData } from '../types';
 
 export const INITIAL_FORM_DATA: FormData = {
+  id: 0,
   planNumber: null,
   prefecture: null,
+  city: null,
   windSpeed: null,
   boardSide: null,
   measurements: [
@@ -43,8 +45,5 @@ export const INITIAL_FORM_DATA: FormData = {
     aluminumPitch: null,
     topDistance: null
   },
-  drawingFile: null,
-  drawingFileUrl: null,
-  detailFile: null,
-  detailFileUrl: null
+  files: []
 }; 

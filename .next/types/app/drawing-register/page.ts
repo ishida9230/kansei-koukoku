@@ -1,4 +1,4 @@
-// File: /Users/ishidakouki/Desktop/株式会社関西広告社/kansei-koukoku/src/app/drawing-register/page.tsx
+// File: /Users/ishidakouki/Desktop/kansei-koukoku/src/app/drawing-register/page.tsx
 import * as entry from '../../../../src/app/drawing-register/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

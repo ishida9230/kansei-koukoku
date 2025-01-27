@@ -61,7 +61,7 @@ export const SearchResultTable: React.FC<SearchResultTableProps> = ({ results = 
                     <td className="border px-4 py-2 w-[100px] truncate">{result.prefecture || '-'}</td>
                     <td className="border px-4 py-2 w-[100px] truncate">{result.city || '-'}</td>
                     <td className="border px-4 py-2 w-[100px] truncate">{result.windSpeed || '-'}</td>
-                    <td className="border px-4 py-2 w-[100px] truncate">{result.boardSide === 'single' ? '片面' : '両面' || '-'}</td>
+                    <td className="border px-4 py-2 w-[100px] truncate">{result.boardSide ? (result.boardSide === 'single' ? '片面' : '両面') : '-'}</td>
                     <td className="border px-4 py-2 w-[100px] truncate">
                       <div className="flex flex-col">
                         {result.measurements.map((measurement, index) => (
@@ -104,8 +104,8 @@ export const SearchResultTable: React.FC<SearchResultTableProps> = ({ results = 
                     <td className="border px-4 py-2 w-[100px] truncate">{result.pillar?.holeDepth || '-'}</td>
                     <td className="border px-4 py-2 w-[100px] truncate">{result.pillar?.embedment || '-'}</td>
 
-                    <td className="border px-4 py-2 w-[100px] truncate">
-                      {result.pillar?.foundation?.type === "丸" ? '〇' : '□' || '-'}
+                    <td className="border px-4 py-2 w-[120px] truncate">
+                      {result.pillar?.foundation?.type === "丸" ? '〇' : result.pillar?.foundation?.type === "四角" ? '□' : '-'}
                     </td>
 
                     <td className="border px-4 py-2 w-[100px] truncate">
@@ -127,35 +127,35 @@ export const SearchResultTable: React.FC<SearchResultTableProps> = ({ results = 
                     <td className="border px-4 py-2 w-[100px] truncate">
                       {result.pillar?.structuralBase || '-'}
                     </td>
-                    <td className="border px-4 py-2 w-[100px] truncate">{result.pillar?.leftExtension || '-'}</td>
-                    <td className="border px-4 py-2 w-[100px] truncate">{result.pillar?.rightExtension || '-'}</td>
+                    <td className="border px-4 py-2 w-[130px] truncate">{result.pillar?.leftExtension || '-'}</td>
+                    <td className="border px-4 py-2 w-[130px] truncate">{result.pillar?.rightExtension || '-'}</td>
                     {result.pillar?.spacings.map((spacing, index) => (
-                      <td key={index} className="border px-4 py-2 w-[100px] truncate">
+                      <td key={index} className="border px-4 py-2 w-[120px] truncate">
                         {spacing.width || '-'}
                       </td>
                     ))}
                     {Array.from({ length: Math.max(4, maxSpacingsCount) - (result.pillar?.spacings?.length || 0) }).map((_, i) => (
-                      <td key={`empty-spacing-${i}`} className="border px-4 py-2 w-[100px] truncate">-</td>
+                      <td key={`empty-spacing-${i}`} className="border px-4 py-2 w-[120px] truncate">-</td>
                     ))}
-                    <td className="border px-4 py-2 w-[100px] truncate">{result.pillar?.maxControlWidth || '-'}</td>
-                    <td className="border px-4 py-2 w-[100px] truncate">{result.pillar?.maxFaceWidth || '-'}</td>
-                    <td className="border px-4 py-2 w-[100px] truncate">{result.pillar?.furringSize || '-'}</td>
-                    <td className="border px-4 py-2 w-[100px] truncate">{result.pillar?.furringCount || '-'}</td>
+                    <td className="border px-4 py-2 w-[120px] truncate">{result.pillar?.maxControlWidth || '-'}</td>
+                    <td className="border px-4 py-2 w-[130px] truncate">{result.pillar?.maxFaceWidth || '-'}</td>
+                    <td className="border px-4 py-2 w-[120px] truncate">{result.pillar?.furringSize || '-'}</td>
+                    <td className="border px-4 py-2 w-[120px] truncate">{result.pillar?.furringCount || '-'}</td>
                     {result.pillar?.furringSpacings.map((spacing, index) => (
-                      <td key={index} className="border px-4 py-2 w-[100px] truncate">
+                        <td key={index} className="border px-4 py-2 w-[120px] truncate">
                         {spacing.width || '-'}
                       </td>
                     ))}
                     {Array.from({ length: Math.max(4, maxFurringSpacingsCount) - (result.pillar?.furringSpacings?.length || 0) }).map((_, i) => (
-                      <td key={`empty-furring-${i}`} className="border px-4 py-2 w-[100px] truncate">-</td>
+                      <td key={`empty-furring-${i}`} className="border px-4 py-2 w-[120px] truncate">-</td>
                     ))}
-                    <td className="border px-4 py-2 w-[100px] truncate">{result.pillar?.topOverhang || '-'}</td>
-                    <td className="border px-4 py-2 w-[100px] truncate">{result.pillar?.bottomOverhang || '-'}</td>
-                    <td className="border px-4 py-2 w-[100px] truncate">{result.pillar?.furringThickness || '-'}</td>
-                    <td className="border px-4 py-2 w-[100px] truncate">{result.pillar?.maxFurringPitch || '-'}</td>
-                    <td className="border px-4 py-2 w-[100px] truncate">{result.pillar?.embrace11v || '-'}</td>
-                    <td className="border px-4 py-2 w-[100px] truncate">{result.pillar?.aluminumPitch || '-'}</td>
-                    <td className="border px-4 py-2 w-[100px] truncate">{result.pillar?.topDistance || '-'}</td>
+                    <td className="border px-4 py-2 w-[150px] truncate">{result.pillar?.topOverhang || '-'}</td>
+                    <td className="border px-4 py-2 w-[150px] truncate">{result.pillar?.bottomOverhang || '-'}</td>
+                    <td className="border px-4 py-2 w-[120px] truncate">{result.pillar?.furringThickness || '-'}</td>
+                    <td className="border px-4 py-2 w-[150px] truncate">{result.pillar?.maxFurringPitch || '-'}</td>
+                    <td className="border px-4 py-2 w-[120px] truncate">{result.pillar?.embrace11v || '-'}</td>
+                    <td className="border px-4 py-2 w-[150px] truncate">{result.pillar?.aluminumPitch || '-'}</td>
+                    <td className="border px-4 py-2 w-[150px] truncate">{result.pillar?.topDistance || '-'}</td>
                   </tr>
                 );
               })}
